@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+
+.container {
+  padding-top: 10px;
+}
+
+.form-container,
+.table-container
+{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-container
+{
+      border:thin solid #aaaaaa;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background: #f7f7f7;
+}
+
+
+
+.login-div
+{
+padding:0;
+margin:0;
+position: absolute;
+width:100%;
+height:100%;
+background: url(../images/headphones_16-wallpaper-2304x768.jpg);
+background-repeat:no-repeat;
+}
+
+.loginForm-container
+{
+top:50%;
+left:40%;
+padding-top:80px;
+width:320px;
+height:420px;
+font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+position:absolute;
+transform:translate(-50%,-50%);
+box-sizing:border-box;
+background-image: linear-gradient(-225deg, white 50%, #cae9e4 50%);
+text-align:center;
+box-shadow: inset 0px 0px 4px 4px grey;
+
+}
+
+.loginForm-container h2 {
+                         font-size: 250%;
+                         font-family: 'Playfair Display', serif;
+                         color: #3e403f;
+                     }
+
+
+
+.logout
+{
+    margin-bottom:30px;
+}
+
+/* link buttons */
+.green-button,
+.red-button,
+.blue-button,
+.login-button,
+.register-button
+{
+  padding: 7px 10px;
+  font-size: 0.875rem;
+  line-height: normal;
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.login-button{
+color: #b1d9d3;
+background-color: white;
+  border-color: black;
+}
+
+.register-button{
+background-color: #cae9e4;
+
+}
+
+.green-button
+{
+    background-color: #28a745;
+}
+
+.red-button
+{
+    background-color: #dc3545;
+}
+
+.blue-button
+{
+    background-color: #3545dc;
+}
+
+.green-button:hover,
+.red-button:hover,
+.blue-button:hover,
+.login-button:hover,
+.register-button:hover
+{
+    text-decoration: none;
+    color:#fff;
+}
+
+.green-button:hover
+{
+    background-color: #107020;
+}
+
+.red-button:hover
+{
+  background-color: #a01020;
+}
+
+.blue-button:hover
+{
+  background-color: #1020a0;
+}
+
+.login-button:hover
+{
+color: #afd8d4;
+background-color: #f8bbb9;
+}
+
+.register-button:hover
+{
+background-color: white;
+color: #cae9e4;
+
+}
+/* end of link buttons */
+
+
+
+
+input [type="button"]
+{
+color:pink;
+}
+
+.loginForm-container input
+{
+ font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+    margin:0.5%;
+    transition: 0.2s linear;
+box-shadow: inset 0px 0px 2px 2px grey;
+width: 55%;
+}
+
+.registerDiv
+{
+padding:0;
+margin:0;
+position: absolute;
+width:100%;
+height:100%;
+background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.registerForm-container
+{
+top:45%;
+left:50%;
+padding-top:80px;
+width:500px;
+height:570px;
+font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+position:absolute;
+transform:translate(-50%, -50%);
+box-sizing:border-box;
+background-image: linear-gradient(-225deg, #cae9e4 50%, #FFE6FA 50%);
+text-align:center;
+box-shadow:0px 0px 4px 4px grey;
+}
+
+.registerForm-container input{
+font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+margin:0.5%;
+    transition: 0.2s linear;
+box-shadow: inset 0px 0px 2px 2px grey;
+width:55%;
+}
+
+.registerForm-container h2 {
+                         font-size: 300%;
+                         font-family: 'Playfair Display', serif;
+                         color: #3e403f;
+                     }
+
+
+
+/* table of Products */
+.table-container table
+{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table-container thead
+{
+    background-color: #aaa;
+    color:#fff;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.table-container tbody tr
+{
+    height:3em;
+}
+
+.table-container thead th,
+.table-container tbody td
+{
+    padding:5px;
+}
+.table-container tbody tr:nth-child(odd) 
+{
+    background-color: #eee;
+}
+
+.table-container tbody tr:nth-child(even) 
+{
+    background-color: #ffa;
+}
+
+.add-new-Product
+{
+    margin-top:1em;
+}
+
+.logo{
+padding-right:600px;
+font-size: 2em;
+color: #afd8d4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.logo:hover{
+text-decoration: none;
+color: #afd8d4;
+}
+
+/*end of table of Products */
+
+
+/* logged in user's profile photo */
+#profilePhoto
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: thin solid #aaa;
+    float:right;
+    background-size:contain;
+}
+/* end of logged in user's profile photo */
+
+
+.ProductPhotos
+{
+    overflow-x: auto;
+    white-space: nowrap;
+    min-width:18em;
+    max-width:18em;
+}
+
+.ProductPhotos img
+{
+    width:5em;
+    height:5em;
+    padding:0em;
+    margin:0em;
+    margin-right:0.5em;
+    border:thin solid #ccc;
+}
+
+
+.payPalMessage
+{
+    width:650px;    
+    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    border:thin solid #666666;
+    border-radius: 50px;
+    padding:50px;    
+}
+
+
+
+
+#payPalPaymentIDButton
+{
+    margin-top:50px;
+}
+
+#payPalPaymentID
+{
+    font-weight: bold;
+}
