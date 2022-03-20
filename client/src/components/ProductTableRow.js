@@ -24,10 +24,11 @@ export default class ProductTableRow extends Component
             })
         })
     }
+
     
-    
-    render() 
+    render()
     {
+
 
 
         let soldOrForSale = null
@@ -62,19 +63,16 @@ export default class ProductTableRow extends Component
                             <div className="box">
                                     <div className="option_container">
                                         <div className="options">
-                                            <a href="" className="option1">
-                                                Men's Shirt
-                                            </a>
+                                            <Link className="option1" to={"/Modal/"  + this.props.Product._id}>
+                                                Details
+                                            </Link>
                                             <a className="paypalButton">
                                                 {soldOrForSale}
                                             </a>
                                         </div>
                                     </div>
                                     <div className="img-box">
-                                     <ul>
-                                     <li>        {localStorage.accessLevel >= ACCESS_LEVEL_ADMIN ? <Link className="green-button" to={"/EditProduct/" + this.props.Product._id}>Edit</Link> : null} </li>
-                                     <li>       {localStorage.accessLevel >= ACCESS_LEVEL_ADMIN ? <Link className="red-button" to={"/DeleteProduct/" + this.props.Product._id}>Delete</Link> : null} </li>
-                                    </ul>
+
                                     {this.props.Product.photos.map(photo => <img key={photo._id} id={photo._id} alt=""  />)}
                                     </div>
                                     <div className="detail-box">
@@ -89,6 +87,10 @@ export default class ProductTableRow extends Component
 
                                     </div>
                                 </div>
+                        <ul className="adminSection">
+                            <li className="adminButtons">  {localStorage.accessLevel >= ACCESS_LEVEL_NORMAL_USER ? <Link className="green-button" to={"/EditProduct/" + this.props.Product._id}>Edit</Link> : null} </li>
+                            <li className="adminButtons"> {localStorage.accessLevel >= ACCESS_LEVEL_NORMAL_USER? <Link className="red-button" to={"/DeleteProduct/" + this.props.Product._id}>Delete</Link> : null} </li>
+                        </ul>
 
                     </div>
 

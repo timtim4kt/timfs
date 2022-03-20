@@ -35,7 +35,7 @@ export default class DeleteProduct extends Component
     {
         return (
             <div>   
-                {this.state.redirectToDisplayAllProducts ? <Redirect to="/DisplayAllProducts"/> : null}
+                {this.state.redirectToDisplayAllProducts ? <Redirect to="/Products"/> : null}
             </div>
         )
     }

@@ -19,6 +19,7 @@ import LoggedInRoute from "./components/LoggedInRoute"
 import BuyProduct from "./components/BuyProduct"
 import PayPalMessage from "./components/PayPalMessage"
 import Products from "./components/Products"
+import Modal from"./components/Modal"
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 
@@ -30,6 +31,7 @@ if (typeof localStorage.accessLevel === "undefined")
     localStorage.token = null
     localStorage.profilePhoto = null
 }
+
 
     
 export default class App extends Component 
@@ -51,6 +53,7 @@ export default class App extends Component
                     <LoggedInRoute exact path="/EditProduct/:id" component={EditProduct} />
                     <LoggedInRoute exact path="/DeleteProduct/:id" component={DeleteProduct} />
                     <Route exact path="/DisplayAllProducts" component={DisplayAllProducts}/>
+                    <Route exact path="/Modal/:id" component={Modal}/>
                     <Route path="*" component={DisplayAllProducts}/>
                 </Switch>
             </BrowserRouter>

@@ -8,27 +8,9 @@ import Logout from "./Logout";
 export default class ProductTable extends Component
 {
 
-    handleNameClick = e =>
-    {
-        let ProductTable = this.props.Products.sort((a, b) => a.name > b.name ? 1 : -1)
-        this.setState({ProductTable})
-    }
-
-    handlePriceClick = e =>
-    {
-        let ProductTable = this.props.Products.sort((a, b) => a.price > b.price ? 1 : -1)
-        this.setState({ProductTable})
-    }
-
-
-
-
-
 
     render() 
     {
-
-
 
         return (
 

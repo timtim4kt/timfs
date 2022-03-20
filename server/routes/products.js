@@ -28,7 +28,7 @@ const verifyUsersJWTPassword = (req, res, next) =>
 
 const checkThatUserIsAnAdministrator = (req, res, next) =>
 {
-    if(req.decodedToken.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
+    if(req.decodedToken.accessLevel >= process.env.ACCESS_LEVEL_NORMAL_USER)
     {    
         return next()
     }
@@ -154,7 +154,7 @@ router.get(`/products`, getAllProductDocuments)
 router.get(`/products/photo/:filename`, getProductPhotoAsBase64)
 
 // Read one record
-router.get(`/products/:id`, verifyUsersJWTPassword, getProductDocument)
+router.get(`/products/:id`, getProductDocument)
 
 // Add new record
 router.post(`/products`, verifyUsersJWTPassword, checkThatUserIsAnAdministrator, upload.array("productPhotos", parseInt(process.env.MAX_NUMBER_OF_UPLOAD_FILES_ALLOWED)), createNewProductDocument)

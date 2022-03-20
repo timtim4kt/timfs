@@ -19,7 +19,7 @@ export default class Login extends Component
             wasSubmittedAtLeastOnce:false
         }
     }
-        
+
     
     handleChange = (e) => 
     {
@@ -47,7 +47,7 @@ export default class Login extends Component
 
 
     render()
-    {         
+    {
         let errorMessage = "";
         if(this.state.wasSubmittedAtLeastOnce)
         {
@@ -55,10 +55,16 @@ export default class Login extends Component
         }
         
         return (
+
+
+
                 <div className="login-div">
+
                     <form className="loginForm-container" noValidate = {true} id = "loginOrRegistrationForm">
                         <h2>Log In</h2>
                         <p>Login here using your email and password</p>
+
+                        {errorMessage}
 
                         {this.state.isLoggedIn ? <Redirect to="/DisplayAllProducts"/> : null}
 

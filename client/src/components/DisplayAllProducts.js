@@ -88,6 +88,16 @@ export default class DisplayAllProducts extends Component
 
                                     {localStorage.accessLevel > ACCESS_LEVEL_GUEST ?
                                         <li className="nav-item">
+                                            <img id="profilePhoto" src={`data:;base64,${localStorage.profilePhoto}`} alt=""/>
+                                        </li>
+                                        :
+                                       null
+
+
+                                    }
+
+                                    {localStorage.accessLevel > ACCESS_LEVEL_GUEST ?
+                                        <li className="nav-item">
 
                                         </li>
                                         :

@@ -6,7 +6,7 @@ import axios from "axios"
 
 import LinkInClass from "../components/LinkInClass"
 
-import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../config/global_constants"
+import {ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER, SERVER_HOST} from "../config/global_constants"
 
 
 export default class AddProduct extends Component
@@ -21,7 +21,7 @@ export default class AddProduct extends Component
             year:"",
             price:"",
             selectedFiles:null,
-            redirectToDisplayAllProducts:localStorage.accessLevel < ACCESS_LEVEL_ADMIN,
+            redirectToDisplayAllProducts:localStorage.accessLevel < ACCESS_LEVEL_NORMAL_USER,
             wasSubmittedAtLeastOnce:false
         }
     }
@@ -85,7 +85,7 @@ export default class AddProduct extends Component
     
         return (
             <div className="form-container"> 
-                {this.state.redirectToDisplayAllProducts ? <Redirect to="/DisplayAllProducts"/> : null}
+                {this.state.redirectToDisplayAllProducts ? <Redirect to="/Products"/> : null}
                     
                 {errorMessage}
                 
@@ -118,7 +118,7 @@ export default class AddProduct extends Component
             
                     <LinkInClass value="Add" className="green-button" onClick={this.handleSubmit}/>            
             
-                    <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
+                    <Link className="red-button" to={"/Products"}>Cancel</Link>
                 </Form>
             </div>
         )

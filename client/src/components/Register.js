@@ -77,9 +77,9 @@ export default class Register extends Component
            
                 {this.state.isRegistered ? <Redirect to="/DisplayAllProducts"/> : null}
             
-                {errorMessage}
-            
                 <h2>New Account</h2>
+
+                {errorMessage}
            
                 <input  
                     name = "name"              
@@ -126,7 +126,7 @@ export default class Register extends Component
                 /><br/><br/>
 
                 <LinkInClass value="Register New User" className="register-button" onClick={this.handleSubmit} />
-                <Link className="red-button" to={"/DisplayAllCars"}>Cancel</Link>
+                <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
                 <br></br>
                 <br></br>
                 <Link className="returning" to={"/Login"}>Returning Customer? Log In</Link>

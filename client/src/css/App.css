@@ -114,7 +114,7 @@ background-color: #cae9e4;
 
 .blue-button
 {
-    background-color: #3545dc;
+    background-color: #afd8d4;
 }
 
 .green-button:hover,
@@ -265,6 +265,7 @@ width:55%;
 .add-new-Product
 {
     margin-top:1em;
+
 }
 
 .logo{
@@ -325,7 +326,9 @@ color: #afd8d4;
     padding:50px;    
 }
 
-
+.error{
+    color:red;
+}
 
 
 #payPalPaymentIDButton

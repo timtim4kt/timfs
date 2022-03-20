@@ -5,7 +5,7 @@ import axios from "axios"
 
 import LinkInClass from "../components/LinkInClass"
 
-import {ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../config/global_constants"
+import {ACCESS_LEVEL_NORMAL_USER, SERVER_HOST} from "../config/global_constants"
 
 export default class EditProduct extends Component
 {
@@ -18,7 +18,7 @@ export default class EditProduct extends Component
             Brand: ``,
             year: ``,
             price: ``,
-            redirectToDisplayAllProducts:localStorage.accessLevel < ACCESS_LEVEL_ADMIN,
+            redirectToDisplayAllProducts:localStorage.accessLevel < ACCESS_LEVEL_NORMAL_USER,
             wasSubmittedAtLeastOnce:false
         }
     }
@@ -32,7 +32,7 @@ export default class EditProduct extends Component
         {     
             this.setState({
                 name: res.data.name,
-                Brand: res.data.Brand,
+                brand: res.data.brand,
                 year: res.data.year,
                 price: res.data.price
             })            
@@ -56,7 +56,7 @@ export default class EditProduct extends Component
 
         const ProductObject = {
             name: this.state.name,
-            Brand: this.state.Brand,
+            brand: this.state.brand,
             year: this.state.year,
             price: this.state.price
         }
@@ -84,19 +84,19 @@ export default class EditProduct extends Component
         return (
             <div className="form-container">
     
-                {this.state.redirectToDisplayAllProducts ? <Redirect to="/DisplayAllProducts"/> : null}
+                {this.state.redirectToDisplayAllProducts ? <Redirect to="/Products"/> : null}
                     
                 {errorMessage}
                 
                 <Form>
                     <Form.Group controlId="name">
-                        <Form.Label>name</Form.Label>
+                        <Form.Label>Name</Form.Label>
                         <Form.Control ref = {(input) => { this.inputToFocus = input }} type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                     </Form.Group>
 
                     <Form.Group controlId="Brand">
                         <Form.Label>Brand</Form.Label>
-                        <Form.Control type="text" name="Brand" value={this.state.Brand} onChange={this.handleChange} />
+                        <Form.Control type="text" name="Brand" value={this.state.brand} onChange={this.handleChange} />
                     </Form.Group>
 
                     <Form.Group controlId="year">
@@ -111,7 +111,7 @@ export default class EditProduct extends Component
   
                     <LinkInClass value="Update" className="green-button" onClick={this.handleSubmit}/>  
     
-                    <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
+                    <Link className="red-button" to={"/Products"}>Cancel</Link>
                 </Form>
             </div>
         )

@@ -414,6 +414,7 @@ a:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+    padding-left: 8%;
 }
 
 .product_section .box .detail-box h5 {
@@ -425,6 +426,7 @@ a:focus {
   margin-top: 10px;
   color: #afd8d4;
   font-weight: 600;
+    margin-left: 20%;
 }
 
 .product_section .box:hover img {
@@ -482,6 +484,8 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+    padding-top: 150%;
+
 }
 
 .product_section .options a {
@@ -500,6 +504,7 @@ a:focus {
   background-color: #f8bbb9;
   border: 1px solid #f8bbb9;
   color: #ffffff;
+
 }
 
 .product_section .options .option1:hover {
@@ -547,16 +552,24 @@ a:focus {
 .contents{
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
-height: 1800px;
+flex-direction: row;
+height: 300%;
+
 }
 
 .contents div {
-height: 430px;
+height: 200%;
 margin: 0.5px;
 text-align: center;
-padding-bottom:0;
+padding-top:0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 30%;
+
 }
+
+
+
 
 .arrival_section{
     background-color: white;
@@ -634,7 +647,7 @@ padding-bottom:0;
 
 .sortDiv{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    padding-right: 110%;
+    padding-right: 82%;
     height: 94px;
 }
 
@@ -732,6 +745,15 @@ list-style-type:none;
 }
 
 .searchBar{
+    margin-top: 5%;
+}
+
+.adminSection{
+list-style-type: none;
+display: inline-flex;
+}
+
+.adminSection .adminButtons{
     margin-top: 5%;
 }
 
