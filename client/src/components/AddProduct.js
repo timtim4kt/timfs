@@ -76,12 +76,30 @@ export default class AddProduct extends Component
 
 
     render()
-    {       
+    {
+        const today = new Date()
         let errorMessage = "";
-        if(this.state.wasSubmittedAtLeastOnce)
-        {
-            errorMessage = <div className="error">Error: All fields must be filled in<br/></div>;
-        }                
+        if(this.state.wasSubmittedAtLeastOnce) {
+            if(this.state.name.length < 1){
+                errorMessage = <div className="error">Error: Invalid name<br/></div>;
+
+            }
+            else if(!(this.state.brand.toLowerCase().includes("samsung") || this.state.brand.toLowerCase().includes("bose") || this.state.brand.toLowerCase().includes("apple")))
+            {
+                errorMessage = <div className="error">Error: We only sell Apple/Bose/Samsung Products<br/></div>;
+            }
+            else if(!(this.state.year >= 2020 && this.state.year <= today.getFullYear()))
+            {
+                errorMessage = <div className="error">Error: Year must be 2020-2022<br/></div>;
+            }
+            else if(!(this.state.price > 0))
+            {
+                errorMessage = <div className="error">Error: Price can't be negative<br/></div>;
+            }
+
+            }
+
+
     
         return (
             <div className="form-container"> 

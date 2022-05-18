@@ -9,7 +9,7 @@ const JWT_PRIVATE_KEY = fs.readFileSync(process.env.JWT_PRIVATE_KEY_FILENAME, 'u
 
 const multer  = require('multer')
 var upload = multer({dest: `${process.env.UPLOADED_FILES_FOLDER}`})
-
+const today = new Date()
 
 const verifyUsersJWTPassword = (req, res, next) =>
 {
@@ -39,6 +39,8 @@ const checkThatUserIsAnAdministrator = (req, res, next) =>
 }
 
 
+
+
 const createNewProductDocument = (req, res, next) =>
 {           
     // Use the new product details to create a new product document
@@ -59,12 +61,21 @@ const createNewProductDocument = (req, res, next) =>
         
     productsModel.create(productDetails, (err, data) =>
     {
-        if(err)
+        if(!(req.body.brand.toLowerCase().includes("samsung") || req.body.brand.toLowerCase().includes("bose") || req.body.brand.toLowerCase().includes("apple")))
         {
-            return next(err)
+            return next(createError(401))
         }
-        
-        return res.json(data)        
+        else if(!(req.body.price > 0))
+        {
+            return next(createError(401))
+        }
+        else if(!(req.body.year >=  2020 && req.body.year <= today.getFullYear()))
+        {
+            return next(createError(401))
+        }
+        else {
+            return res.json(data)
+        }
     })
 }
 
@@ -123,12 +134,21 @@ const updateProductDocument = (req, res, next) =>
 {
     productsModel.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, data) =>
     {
-        if(err)
+        if(!(req.body.brand.toLowerCase().includes("samsung") || req.body.brand.toLowerCase().includes("bose") || req.body.brand.toLowerCase().includes("apple")))
         {
-            return next(err)
-        }  
-        
-        return res.json(data)
+            return next(createError(401))
+        }
+        else if(!(req.body.price > 0))
+        {
+            return next(createError(401))
+        }
+        else if(!(req.body.year >=  2020 && req.body.year <= today.getFullYear()))
+        {
+            return next(createError(401))
+        }
+        else {
+            return res.json(data)
+        }
     })        
 }
 
